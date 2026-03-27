@@ -38,7 +38,7 @@ namespace Breeze
     {
 
         //* corner radius (pixels)
-        Frame_FrameRadius = 5,
+        Frame_FrameRadius = 12,
 
         //* titlebar metrics (pixels)
         TitleBar_TopMargin = 0,
