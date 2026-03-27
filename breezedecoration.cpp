@@ -546,10 +546,8 @@ namespace Breeze
             winCol.setAlpha(titleBarAlpha());
             painter->setBrush(winCol);
 
-            // clip away the top part
-            if( !hideTitleBar() ) painter->setClipRect(0, borderTop(), size().width(), size().height() - borderTop(), Qt::IntersectClip);
-
-            if( s->isAlphaChannelSupported() ) painter->drawRoundedRect(rect(), Metrics::Frame_FrameRadius, Metrics::Frame_FrameRadius);
+            // Draw full window with rounded corners on all 4 sides
+            if( s->isAlphaChannelSupported() ) painter->drawRoundedRect(rect(), Metrics::Frame_FrameRadius * this->scaleFactor(), Metrics::Frame_FrameRadius * this->scaleFactor());
             else painter->drawRect( rect() );
 
             painter->restore();
